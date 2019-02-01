@@ -1,14 +1,3 @@
-const input = {
-  name: 'Лучник',
-  type: 'Bowman',
-  health: 50,
-  level: 1,
-  attack: 40,
-  defence: 10
-};
-
-
-
 const icons = (iconName) => {
   const codes = {
     Bowman: 0x1F620,
@@ -20,21 +9,23 @@ const icons = (iconName) => {
     swords: 0x2694,
     shield: 0x1F6E1,
     heart: 0x2764,
-  }
+  };
 
-  const icons = Object.entries(codes).reduce((acc, [key, value]) =>  (
-    { ...acc, [key]: String.fromCodePoint(value)}
+  const iconsArray = Object.entries(codes).reduce((acc, [key, value]) => (
+    { ...acc, [key]: String.fromCodePoint(value) }
   ), {});
 
-  return icons[iconName];
-}
+  return iconsArray[iconName];
+};
 
-
-const makeDescription = ({ type, name, level, attack, defence, health }) => {
+const makeDescription = ({
+  type, name, level, attack, defence, health,
+}) => {
   const typeIcon = icons(type);
-  const [ swords, shield, heart ] = [ 'swords', 'shield', 'heart' ].map(item => icons(item));
+  const [swords, shield, heart] = ['swords', 'shield', 'heart'].map(item => icons(item));
   const nameLetter = name[0];
-  return `${typeIcon} ${nameLetter}(${level}) ${swords}${attack} ${shield}${defence} ${heart}${health}`
-}
+
+  return `${typeIcon} ${nameLetter}(${level}) ${swords}${attack} ${shield}${defence} ${heart}${health}`;
+};
 
 export default makeDescription;
