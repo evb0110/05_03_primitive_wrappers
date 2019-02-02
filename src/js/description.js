@@ -1,7 +1,7 @@
 const makeIconsFunction = () => {
   const codes = {
     Bowman: 0x1F620,
-    Swordsman: 0x1F61B, // temp value, to be changed
+    Swordsman: 0x1F621,
     Magician: 0x1F9D0,
     Daemon: 0x1F47F,
     Undead: 0x1F480,
