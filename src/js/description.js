@@ -1,4 +1,4 @@
-const icons = (iconName) => {
+const makeIconsFunction = () => {
   const codes = {
     Bowman: 0x1F620,
     Swordsman: 0x1F61B, // temp value, to be changed
@@ -15,8 +15,10 @@ const icons = (iconName) => {
     { ...acc, [key]: String.fromCodePoint(value) }
   ), {});
 
-  return iconsArray[iconName];
-};
+  return iconName => iconsArray[iconName];
+}
+
+const icons = makeIconsFunction();
 
 const makeDescription = ({
   type, name, level, attack, defence, health,
