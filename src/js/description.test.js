@@ -26,7 +26,7 @@ test('testing data for Swordsman', () => {
     defence: 17,
   };
 
-  const expected = '😛 М(10) ⚔45 🛡17 ❤5';
+  const expected = '😡 М(10) ⚔45 🛡17 ❤5';
   const result = makeDescription(input);
 
   expect(result).toBe(expected);
