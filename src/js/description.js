@@ -11,11 +11,11 @@ const makeIconsFunction = () => {
     heart: 0x2764,
   };
 
-  const iconsArray = Object.entries(codes).reduce((acc, [key, value]) => (
+  const iconsObject = Object.entries(codes).reduce((acc, [key, value]) => (
     { ...acc, [key]: String.fromCodePoint(value) }
   ), {});
 
-  return iconName => iconsArray[iconName];
+  return iconName => iconsObject[iconName];
 };
 
 const icons = makeIconsFunction();
