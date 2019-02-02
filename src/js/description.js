@@ -16,7 +16,7 @@ const makeIconsFunction = () => {
   ), {});
 
   return iconName => iconsArray[iconName];
-}
+};
 
 const icons = makeIconsFunction();
 
