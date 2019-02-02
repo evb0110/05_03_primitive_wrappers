@@ -23,7 +23,7 @@ const icons = makeIconsFunction();
 const makeDescription = ({
   type, name, level, attack, defence, health,
 }) => {
-  const [typeIcon, swords, shield, heart] = [[type], 'swords', 'shield', 'heart'].map(item => icons(item));
+  const [typeIcon, swords, shield, heart] = [type, 'swords', 'shield', 'heart'].map(item => icons(item));
   const nameLetter = name[0];
 
   return `${typeIcon} ${nameLetter}(${level}) ${swords}${attack} ${shield}${defence} ${heart}${health}`;
